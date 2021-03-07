@@ -1,0 +1,2 @@
+class TradingCard < ApplicationRecord
+end
