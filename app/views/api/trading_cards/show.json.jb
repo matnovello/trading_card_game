@@ -1,0 +1,1 @@
+render partial: "card.json.jb", locals: { card: @card }

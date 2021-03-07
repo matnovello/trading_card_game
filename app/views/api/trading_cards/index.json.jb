@@ -1,0 +1,3 @@
+@cards.map do |card|
+  render partial: "card.json.jb", locals: { card: card }
+end
