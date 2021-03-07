@@ -10,8 +10,8 @@ class Api::TradingCardsController < ApplicationController
   end
 
   def create
-    card = Card.new({ name: params[:name], description: params[:description], rarity: params[:rarity] })
-    card.save
+    @card = Card.new({ name: params[:name], description: params[:description], rarity: params[:rarity] })
+    @card.save
     render "show.json.jb"
   end
 
@@ -24,8 +24,9 @@ class Api::TradingCardsController < ApplicationController
     render "show.json.jb"
   end
 
-  def delete
+  def destroy
     card = Card.find(params[:id])
+    card.destroy
     render json: { message: "The Card #{card.name} with ID of #{card.id} has been successfully deleted" }
   end
 end

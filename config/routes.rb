@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     #patch
     patch "/trading_cards/:id" => "trading_cards#patch"
     #delete
-    get "/trading_cards/:id" => "trading_cards#destroy"
+    post "/trading_cards/:id" => "trading_cards#destroy"
   end
 end
