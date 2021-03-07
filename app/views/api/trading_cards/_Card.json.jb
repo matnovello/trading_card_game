@@ -3,5 +3,5 @@
   name: card.name,
   description: card.description,
   rarity: card.rarity,
-
+  rarity_info: card.rarity_info,
 }
