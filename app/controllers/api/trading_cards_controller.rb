@@ -1,7 +1,12 @@
 class Api::TradingCardsController < ApplicationController
   def index
     @cards = Card.all
-    render "index.json.jb"
+    if params[:sort] == "rarity" && params[:sort_order] == "desc"
+      @cards = Card.order(rarity: :desc)
+      render "index.json.jb"
+    else
+      render "index.json.jb"
+    end
   end
 
   def show
